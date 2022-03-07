@@ -1,4 +1,78 @@
 <hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<main>
+  <div class="container col-10 offset-1">
+    <div class="input-group input-lg mb-3 h-xl-2000">
+      <div class="input-group-prepend">
+        <label for="op1" class="input-group-text">Op. 1</label>
+      </div>
+      <input
+        name="op1"
+        id="op1"
+        type="number"
+        class="form-control"
+        value="{{ op1 }}"
+      />
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label for="op2" class="input-group-text">Op. 2</label>
+      </div>
+      <input
+        name="op2"
+        id="op2"
+        type="number"
+        class="form-control"
+        value="{{ op2 }}"
+      />
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label for="res" class="input-group-text">Résultat</label>
+      </div>
+      <input name="res" id="res" type="number" disabled class="form-control" />
+    </div>
+  </div>
+
+  <div class="container col-10 offset-1">
+    <button class="btn btn-secondary"></button>
+    <button class="btn btn-secondary"></button>
+    <button class="btn btn-secondary"></button>
+    <button class="btn btn-secondary"></button>
+  </div>
+
+  <div class="container col-10 offset-1">
+    <!--<button class="row mt-3 mb-3 col-10 offset-1 btn-success border-0 rounded" onclick="memoire()">Mémoriser</button>
+    <button class="row mb-3 col-10 offset-1 btn-success border-0 rounded" onclick="">Charger la mémoire</button>
+    -->
+    <div class="input-group mb-3 mt-3">
+      <div class="input-group-prepend">
+        <label for="memo" class="input-group-text">En mémoire</label>
+      </div>
+      <input
+        name="memo"
+        id="memo"
+        type="number"
+        disabled
+        class="form-control"
+      />
+    </div>
+  </div>
+
+  <div class="container col-10 offset-1">
+    <h5 class="">Les 10 dernières opérations :</h5>
+    <table id="tableau" class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Ordre</th>
+          <th>Op1</th>
+          <th>Op</th>
+          <th>Op2</th>
+          <th></th>
+          <th>Res</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</main>
