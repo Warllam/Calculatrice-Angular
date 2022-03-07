@@ -10,7 +10,7 @@
         id="op1"
         type="number"
         class="form-control"
-        value="{{ op1 }}"
+        [(ngModel)]="op1"
       />
     </div>
     <div class="input-group mb-3">
@@ -22,7 +22,7 @@
         id="op2"
         type="number"
         class="form-control"
-        value="{{ op2 }}"
+        [(ngModel)]="op2"
       />
     </div>
 
@@ -30,17 +30,41 @@
       <div class="input-group-prepend">
         <label for="res" class="input-group-text">Résultat</label>
       </div>
-      <input name="res" id="res" type="number" disabled class="form-control" />
+      <input
+        name="res"
+        id="res"
+        type="number"
+        disabled
+        class="form-control"
+        value="{{ result }}"
+      />
     </div>
   </div>
 
-  <div class="container col-10 offset-1">
-    <button class="btn btn-secondary"></button>
-    <button class="btn btn-secondary"></button>
-    <button class="btn btn-secondary"></button>
-    <button class="btn btn-secondary"></button>
+  <div class="container col-8 offset-2">
+    <div class="row">
+      <button
+        class="btn col rounded border btn-secondary"
+        *ngFor="let ops of lister()"
+        (click)="calc(ops)"
+      >
+        {{ ops }}
+      </button>
+    </div>
   </div>
-
+  <div class="container col-8 mt-3 offset-2">
+    <div class="row">
+      <button class="col m-1 rounded btn btn-primary" (click)="memoriser()">
+        Memoriser
+      </button>
+      <button
+        class="col m-1 rounded btn btn-primary"
+        (click)="chargerMemoire()"
+      >
+        Charger la memoire
+      </button>
+    </div>
+  </div>
   <div class="container col-10 offset-1">
     <!--<button class="row mt-3 mb-3 col-10 offset-1 btn-success border-0 rounded" onclick="memoire()">Mémoriser</button>
     <button class="row mb-3 col-10 offset-1 btn-success border-0 rounded" onclick="">Charger la mémoire</button>
@@ -55,6 +79,7 @@
         type="number"
         disabled
         class="form-control"
+        value="{{ memorise }}"
       />
     </div>
   </div>
